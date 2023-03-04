@@ -11,22 +11,23 @@ const itemsObject = [
   { quantity: 5, price: 400 },
 ];
 
+// function Q1_1(itemsObject) {
+//   let res = [];
+//   for (let i of itemsObject) {
+//     i.quantity *= 2;
+//     i.price *= 2;
+//     res.push(i);
+//   }
+//   return res;
+// }
+
 function Q1_1(itemsObject) {
-  let res = [];
-  for (let i of itemsObject) {
-    i.quantity *= 2;
-    i.price *= 2;
-    res.push(i);
-  }
-  return res;
-}
-function Q1_1_1(itemsObject) {
   return itemsObject.map(({ quantity, price }) => ({
     quantity: quantity * 2,
     price: price * 2,
   }));
 }
-console.log(Q1_1_1(itemsObject));
+console.log(Q1_1(itemsObject));
 function Q1_2(itemsObject) {
   let res = [];
   for (let i of itemsObject) {
@@ -36,6 +37,7 @@ function Q1_2(itemsObject) {
   }
   return res;
 }
+console.log(Q1_2(itemsObject));
 function Q1_3(itemsObject) {
   let res = 0;
   for (let i of itemsObject) {
@@ -43,6 +45,7 @@ function Q1_3(itemsObject) {
   }
   return res;
 }
+console.log(itemsObject);
 console.log(Q1_3(itemsObject));
 /*
   Question 2
