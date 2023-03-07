@@ -96,17 +96,23 @@ const expectedReturnArray = [
 
 function Q3(first, second) {
   const mymap = new Map();
-  for (let i of first) {
-    mymap.set(i.uuid, i);
-    mymap.get(i.uuid).role = null;
-  }
   for (let i of second) {
+    const myobj = {};
+    myobj.uuid = i.uuid;
+    myobj.role = i.role;
+    myobj.name = null;
+    mymap.set(i.uuid, myobj);
+  }
+  for (let i of first) {
     if (mymap.has(i.uuid)) {
-      mymap.get(i.uuid).role = i.role;
+      mymap.get(i.uuid).name = i.name;
       continue;
     }
-    mymap.set(i.uuid, i);
-    mymap.get(i.uuid).name = null;
+    const myobj = {};
+    myobj.uuid = i.uuid;
+    myobj.role = null;
+    myobj.name = i.name;
+    mymap.set(i.uuid, myobj);
   }
   return [...mymap.values()].sort((a, b) => a.uuid - b.uuid);
 }
